@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FDD916A-81C8-4A04-A407-6FB5E4BAAFB2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Projet_GestionCongee</RootNamespace>
+    <AssemblyName>Projet_GestionCongee</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Classe_Metier\Demande.cs" />
+    <Compile Include="Classe_Metier\Departement.cs" />
+    <Compile Include="Classe_Metier\Personne.cs" />
+    <Compile Include="GUI\AdminGUI\AfficheDemande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminGUI\AfficheDemande.Designer.cs">
+      <DependentUpon>AfficheDemande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminGUI\CompteAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminGUI\CompteAdmin.Designer.cs">
+      <DependentUpon>CompteAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminGUI\Historique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminGUI\Historique.Designer.cs">
+      <DependentUpon>Historique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminGUI\HomeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminGUI\HomeAdmin.Designer.cs">
+      <DependentUpon>HomeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminGUI\TraiterDemande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminGUI\TraiterDemande.Designer.cs">
+      <DependentUpon>TraiterDemande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EmployeGUI\Compte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmployeGUI\Compte.Designer.cs">
+      <DependentUpon>Compte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gs_Congee.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gs_Congee.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EmployeGUI\DemandePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmployeGUI\DemandePage.Designer.cs">
+      <DependentUpon>DemandePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EmployeGUI\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmployeGUI\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EmployeGUI\MesDemandes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmployeGUI\MesDemandes.Designer.cs">
+      <DependentUpon>MesDemandes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AdminGUI\AfficheDemande.resx">
+      <DependentUpon>AfficheDemande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminGUI\CompteAdmin.resx">
+      <DependentUpon>CompteAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminGUI\Historique.resx">
+      <DependentUpon>Historique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminGUI\HomeAdmin.resx">
+      <DependentUpon>HomeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminGUI\TraiterDemande.resx">
+      <DependentUpon>TraiterDemande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmployeGUI\Compte.resx">
+      <DependentUpon>Compte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmployeGUI\DemandePage.resx">
+      <DependentUpon>DemandePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmployeGUI\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmployeGUI\MesDemandes.resx">
+      <DependentUpon>MesDemandes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ClassDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDB.dbml.layout">
+      <DependentUpon>ClassDB.dbml</DependentUpon>
+    </None>
+    <None Include="gs_Congee.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>gs_Congee.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gs_Congee.dbml.layout">
+      <DependentUpon>gs_Congee.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mot-de-passe.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

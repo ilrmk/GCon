@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="gs_con" Class="gs_CongeeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=gs_con;Integrated Security=True" SettingsObjectName="Projet_GestionCongee.Properties.Settings" SettingsPropertyName="gs_conConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.bureau" Member="bureau">
+    <Type Name="bureau">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nomB" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="bureau_personne" Member="personne" ThisKey="id" OtherKey="id_B" Type="personne" />
+    </Type>
+  </Table>
+  <Table Name="dbo.demande" Member="demande">
+    <Type Name="demande">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_d" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="date_f" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="etat" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="certificat" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="id_pers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="commentaire" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="date_demande" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="demande_historique" Member="historique" ThisKey="id" OtherKey="id_d" Type="historique" />
+      <Association Name="personne_demande" Member="personne" ThisKey="id_pers" OtherKey="id" Type="personne" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.historique" Member="historique">
+    <Type Name="historique">
+      <Column Name="id_d" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_emp" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="commentaire" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="demande_historique" Member="demande" ThisKey="id_d" OtherKey="id" Type="demande" IsForeignKey="true" />
+      <Association Name="personne_historique" Member="personne" ThisKey="id_emp" OtherKey="id" Type="personne" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.personne" Member="personne">
+    <Type Name="personne">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="grade" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_B" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_debut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="nbjour" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="personne_demande" Member="demande" ThisKey="id" OtherKey="id_pers" Type="demande" />
+      <Association Name="personne_historique" Member="historique" ThisKey="id" OtherKey="id_emp" Type="historique" />
+      <Association Name="bureau_personne" Member="bureau" ThisKey="id_B" OtherKey="id" Type="bureau" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

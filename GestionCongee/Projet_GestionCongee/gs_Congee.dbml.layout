@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="gs_Congee">
+  <DataContextMoniker Name="/gs_CongeeDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2608a628-0c7c-4e61-8b02-da0cfa6e3ce4" absoluteBounds="3.75, 1, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/gs_CongeeDataContext/bureau" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1539036b-7e90-4129-b943-b963d5a47e86" absoluteBounds="3.7649999999999997, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c11f2618-c602-4260-8a43-6d5244bd051f" absoluteBounds="1, 1, 2, 2.5401025390625">
+      <DataClassMoniker Name="/gs_CongeeDataContext/demande" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8018c547-a1f1-41f1-9b1a-051721c29d4a" absoluteBounds="1.0150000000000001, 1.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6b383adb-7fce-497a-807d-b983e1207d5d" absoluteBounds="1.5, 4.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/gs_CongeeDataContext/historique" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4de18c6-4031-4770-8bcd-6b54fb0c883c" absoluteBounds="1.5150000000000001, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.25 : 3.5401025390625); (2.25 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/gs_CongeeDataContext/demande/demande_historique" />
+      <nodes>
+        <classShapeMoniker Id="c11f2618-c602-4260-8a43-6d5244bd051f" />
+        <classShapeMoniker Id="6b383adb-7fce-497a-807d-b983e1207d5d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a34e23d4-1ce8-4425-a08b-124b53e9ce58" absoluteBounds="4.375, 3.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/gs_CongeeDataContext/personne" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9936ea66-6c99-4fbf-b3c2-384c0b69e3af" absoluteBounds="4.39, 4.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 4.03125); (2.33333333333333 : 4.03125 : JumpStart); (2.16666666666667 : 4.03125 : JumpEnd); (1.21875 : 4.03125); (1.21875 : 3.5401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/gs_CongeeDataContext/personne/personne_demande" />
+      <nodes>
+        <classShapeMoniker Id="a34e23d4-1ce8-4425-a08b-124b53e9ce58" />
+        <classShapeMoniker Id="c11f2618-c602-4260-8a43-6d5244bd051f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 5.19314697265625); (3.5 : 5.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/gs_CongeeDataContext/personne/personne_historique" />
+      <nodes>
+        <classShapeMoniker Id="a34e23d4-1ce8-4425-a08b-124b53e9ce58" />
+        <classShapeMoniker Id="6b383adb-7fce-497a-807d-b983e1207d5d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0625 : 2.19399251302083); (5.0625 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/gs_CongeeDataContext/bureau/bureau_personne" />
+      <nodes>
+        <classShapeMoniker Id="2608a628-0c7c-4e61-8b02-da0cfa6e3ce4" />
+        <classShapeMoniker Id="a34e23d4-1ce8-4425-a08b-124b53e9ce58" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
